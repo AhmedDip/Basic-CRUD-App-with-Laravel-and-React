@@ -2,79 +2,50 @@
 <html class="h-100" lang="en">
 
 
-{{-- Head Section Start --}}
-
 @include('head.head' , ['title' => "Login"] )
 
-{{-- Head Section End --}}
-
-
-
-<body class="h-100">
-
-    <!--*******************
-        Preloader start
-    ********************-->
-    <div id="preloader">
-        <div class="loader">
-            <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-            </svg>
-        </div>
-    </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-
-
-
-
-
-    <div>
-        <div>
-            <div>
-                <div>
-                    <div>
+    <style>
+        
+        .errors {
+            
+            margin-top: 10px;
+            color:red;
+            text-align: left;
+        }
+</style>
                         <div>
                             <div>
                                 <a href="{{route('login.login')}}">
-                                    <h4>LogIn</h4>
+                                    <h2>Log In</h2>
                                 </a>
 
                                 <form method="POST">
                                     @csrf
-                                    <div class="form-group">
+                                    <div>
                                         <input type="text" name="user_name"
                                             placeholder="User Name">
                                     </div>
-                                    <div class="form-group">
+                                    <br>
+                                    <div>
                                         <input type="password" name="password"
                                             placeholder="Password">
                                     </div>
-                                    <input type="submit" value="Sign in">
+                                    <br>
+                                    <input type="submit" value="Log In">
                                 </form>
                                 {{-- Errors --}}
-                                <div align='center'>{{session('msg')}}</div>
-                                <div align='center'>{{session('change_password')}}</div>
+                                <div align='center' class="errors">{{session('msg')}}</div>
+                                <div align='center' class="errors">{{session('change_password')}}</div>
                                 {{-- Errors end --}}
                                 <p>Dont have account? <a
                                         href="{{ route('registration.register')}}">Sign Up</a> now
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                   
+     
 
 
-
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    @include('scripts.scripts');
 
 </body>
 
