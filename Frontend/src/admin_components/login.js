@@ -32,11 +32,8 @@ const Login = () => {
                         setError({
                             error: "Your account is in pending"
                         })
-                    } else if (response.data.user.account_Status === 'block') {
-                        setError({
-                            error: "Your account is Blocked. Please contact with an admin"
-                        })
-                    } else {
+                    } 
+                     else {
                         if (response.data.user.user_type === 'admin') {
                             window.sessionStorage.setItem('status', 'true');
                             window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
@@ -68,6 +65,9 @@ const Login = () => {
 
     }
 
+    const errors ={
+        color:'red',
+    }
 
 
     return (
@@ -84,7 +84,7 @@ const Login = () => {
                                         </div>
 
                                         {/* error */}
-                                        <div>
+                                        <div  style={errors}>
                                             <p>{error.error.user_name}</p>
                                         </div>
 
@@ -94,22 +94,22 @@ const Login = () => {
                                         </div>
 
                                         {/* error */}
-                                        <div>
+                                        <div  style={errors}>
                                             <p>{error.error.password}</p>
                                         </div>
 
                                         <input type="submit" value="Sign in"/>
 
                                         {/* error */}
-                                        <div>
+                                        <div  style={errors}>
                                             <p>{(error.error)}</p>
                                         </div>
 
                                     </form>
 
-                                    <p className="mt-5 login-form__footer">Dont have account?
+                                    <p>Dont have account?
                                         <Link
-                                            to="/signup" className="text-primary">Sign Up</Link> now
+                                            to="/signup">Sign Up</Link> now
                                     </p>
 
                                 </div>

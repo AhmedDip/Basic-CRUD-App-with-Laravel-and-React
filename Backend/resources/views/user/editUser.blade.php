@@ -3,6 +3,14 @@
 
 @include('head.head' , ['title' => "Edit User"] )
 
+<style>
+        
+        table,th,td,tr {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+    </style>
+
 <body>
 
  
@@ -22,7 +30,7 @@
                             <div>
                                 <h4>Edit Users</h4>
                                 <div>
-                                    <table class="table table-hover table-bordered zero-configuration">
+                                    <table>
                                         <thead>
                                             <tr>
                                                 <th>User Id</th>
@@ -41,7 +49,7 @@
                                             <tr>
                                                 <td>{{$user->id}}</td>
                                                 <td>{{$user->user_name}}</td>
-                                                <td><span class="badge badge-info px-2">{{$user->user_type}}</span>
+                                                <td><span>{{$user->user_type}}</span>
                                                 </td>
                                                 <td>{{$user->address}}</td>
                                                 <td>{{$user->email}}</td>
@@ -96,27 +104,12 @@
 
         <!-- #/ container -->
     </div>
-    <!--**********************************
-            Content body end
-        ***********************************-->
-
-
-    <!--**********************************
-            Footer start
-        ***********************************-->
+    
     @include('footer.footer')
-    <!--**********************************
-            Footer end
-        ***********************************-->
-    </div>
-    <!--**********************************
-        Main wrapper end
-    ***********************************-->
 
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    @include('scripts.scripts')
+    </div>
+ 
+
 
     {{-- <script>
         function updateId(id) {

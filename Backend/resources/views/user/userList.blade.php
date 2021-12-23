@@ -16,7 +16,7 @@
         }
     </style>
 
-    <div id="main-wrapper">
+    <div>
 
    
 
@@ -52,7 +52,7 @@
                                                 <th>Acount Status</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="table_body">
+                                        <tbody>
                                             @foreach ($users as $user)
                                             <tr>
                                                 <td>{{$user->id}}</td>

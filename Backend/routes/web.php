@@ -44,9 +44,6 @@ Route::group(['middleware' => ['sessionCheck']], function () {
         Route::post('/dashbord/completeEdit/{id}', "userController@editingOparetion");
 
 
-        Route::get('/dashbord/blockUser', "userController@blockUser")->name("user.block_user");
-        Route::post('/dashbord/blockUser', "userController@blockUserOparetion")->name("user.block_user");
-
 
      
 

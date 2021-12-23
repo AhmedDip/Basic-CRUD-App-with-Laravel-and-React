@@ -55,30 +55,29 @@ function EditUser() {
                 }
             })
             .catch(error => {
-                alert("Something Went Wrong");
+                alert("Edit User Here");
             })
 
+    }
+
+    const errors ={
+        color:'red',
     }
 
     return (
         <>
             <Sidemenu />
-            <div className="content">
-                <div class="container-fluid">
-                    <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12">
-                                <div class="card m-lg-5">
-                                    <div class="card-body">
-                                        <div class="form-validation">
-                                            <form onSubmit={(e) => submitted(e)} class="form-valide">
+           
+                                    <div>
+                                        <div>
+                                            <form onSubmit={(e) => submitted(e)}>
 
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-skill">User Type <span
-                                                        class="text-danger">*</span>
+                                                <div>
+                                                    <label for="val-skill">User Type <span
+                                                        >*</span>
                                                     </label>
-                                                    <div class="col-lg-6">
-                                                        <select class="form-control" name="user_type" id="val-skill"
+                                                    <div>
+                                                        <select name="user_type" id="val-skill"
                                                             name="val-skill" onChange={(e) => onchange(e)} name="user_type" value={data.user_type} disabled >
                                                             <option >User Type</option>
                                                             <option value="student">Student</option>
@@ -87,89 +86,83 @@ function EditUser() {
                                                         </select>
 
                                                         {/* error */}
-                                                        <div className="error alert-danger">
+                                                        <div style={errors}>
                                                             <p>{error.error.user_type}</p>
                                                         </div>
 
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-username">Username <span
-                                                        class="text-danger">*</span>
+                                                <div>
+                                                    <label for="val-username">Username <span
+                                                        >*</span>
                                                     </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-username"
+                                                    <div>
+                                                        <input type="text" id="val-username"
                                                             name="user_name" placeholder="Enter a username.." onChange={(e) => onchange(e)} name="user_name" value={data.user_name} />
                                                         {/* error */}
-                                                        <div className="error alert-danger">
+                                                        <div  style={errors}>
                                                             <p>{error.error.user_name}</p>
                                                         </div>
                                                     </div>
 
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span
-                                                        class="text-danger">*</span>
+                                                <div>
+                                                    <label for="val-email">Email <span
+                                                        >*</span>
                                                     </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-email" name="email"
+                                                    <div>
+                                                        <input type="text" id="val-email" name="email"
                                                             placeholder="Your valid email.." onChange={(e) => onchange(e)} name="email" value={data.email} />
                                                         {/* error */}
-                                                        <div className="error alert-danger">
+                                                        <div  style={errors}>
                                                             <p>{error.error.email}</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label"
+                                                <div>
+                                                    <label 
                                                         for="val-confirm-password">Address <span
-                                                            class="text-danger">*</span>
+                                                           >*</span>
                                                     </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-confirm-password"
+                                                    <div>
+                                                        <input type="text"  id="val-confirm-password"
                                                             name="address" placeholder="Address" onChange={(e) => onchange(e)} name="address" value={data.address} />
                                                         {/* error */}
-                                                        <div className="error alert-danger">
+                                                        <div  style={errors}>
                                                             <p>{error.error.address}</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Phone (BD)
-                                                        <span class="text-danger">*</span>
+                                                <div>
+                                                    <label for="val-phoneus">Phone (BD)
+                                                        <span >*</span>
                                                     </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-phoneus"
+                                                    <div >
+                                                        <input type="text" id="val-phoneus"
                                                             name="phone_number" placeholder="+88 017XXXXXXX" onChange={(e) => onchange(e)} name="phone_number" value={data.phone_number} />
                                                         {/* error */}
-                                                        <div className="error alert-danger">
+                                                        <div  style={errors}>
                                                             <p>{error.error.phone_number}</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-phoneus">
+                                                <div>
+                                                    <label for="val-phoneus">
 
                                                     </label>
-                                                    <div class="col-lg-6">
+                                                    <div>
                                                         <button type="submit"
-                                                            class="btn btn-primary w-100">Edit User</button>
+                                                           >Edit User</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+                         
         </>
 
     );

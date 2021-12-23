@@ -46,17 +46,13 @@ function App() {
           <Protected cmp={EditUser} />
         </Route>
 
-        {/* <Route exact path="/requests">
-          <Protected cmp={Request} />
-        </Route> */}
-
+  
        
 
         <Route exact path="/logout">
           <Logout cmp={Login} />
         </Route>
       
-        {/* <Route component={Notfound404} /> */}
       </Switch>
 
     </Router>

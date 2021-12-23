@@ -2,6 +2,13 @@
 <html lang="en">
 
 @include('head.head' , ['title' => " Delete User "] )
+<style>
+        
+        table,th,td,tr {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+    </style>
 
 <body>
 
@@ -19,10 +26,10 @@
         
 
         
-                            <div class="card-body">
-                                <h4 class="card-title">Delete</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-hover table-bordered zero-configuration">
+                            <div>
+                                <h4>Delete</h4>
+                                <div>
+                                    <table>
                                         <thead>
                                             <tr>
                                                 <th>User Id</th>
@@ -41,22 +48,22 @@
                                             <tr>
                                                 <td>{{$user->id}}</td>
                                                 <td>{{$user->user_name}}</td>
-                                                <td><span class="badge badge-info px-2">{{$user->user_type}}</span>
+                                                <td><span>{{$user->user_type}}</span>
                                                 </td>
                                                 <td>{{$user->address}}</td>
                                                 <td>{{$user->email}}</td>
                                                 <td>{{$user->phone_number}}</td>
                                                 <td>
                                                     @if ($user->account_Status == 'pending')
-                                                    <span class="badge badge-warning px-2">
+                                                    <span>
                                                         {{$user->account_Status}}</span>
 
                                                     @elseif ($user->account_Status == 'Block')
-                                                    <span class="badge badge-danger px-2">
+                                                    <span>
                                                         {{$user->account_Status}}</span>
 
                                                     @else
-                                                    <span class="badge badge-success px-2">
+                                                    <span>
                                                         {{$user->account_Status}}</span>
                                                     @endif
                                                 </td>
